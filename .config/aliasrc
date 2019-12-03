@@ -1,0 +1,37 @@
+
+# System aliases
+#alias progs='(pacman -Qet && pacman -Qm | sort -u'
+#alias p='sudo pacman'
+#alias vims='NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim'
+alias apt='sudo apt'
+alias vim='nvim'
+
+if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
+    alias h='nvr -o'
+    alias v='nvr -O'
+    alias t='nvr --remote-tab'
+fi
+
+# Some color aliases
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias ip='ip -c'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Opvn aias
+
+# Config aliases
+alias cfi='nvim ~/.config/i3/config'
+alias cfz='nvim ~/.zshrc'
+alias cfv='vim ~/.config/nvim/init.vim'
+alias cfp='vim ~/.profile'
+alias cfa='vim ~/.config/aliasrc'
+alias cfs='vim ~/.ssh/config'
+alias svim='sudo nvim'
+alias sv='sudo vim'
+alias v='nvim'
+
+alias gdots="/usr/bin/git --git-dir=$HOME/.mydots --work-tree=$HOME"
