@@ -5,6 +5,8 @@
 #alias vims='NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim'
 alias apt='sudo apt'
 alias vim='nvim'
+alias tmn='tmux new -s'
+alias duf='du -h --max-depth=1'
 
 if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
     alias h='nvr -o'
@@ -24,7 +26,7 @@ alias egrep='egrep --color=auto'
 # Opvn aias
 
 # Config aliases
-alias cfi='nvim ~/.config/i3/config'
+alias cfi='nvim ~/.config/sway/config'
 alias cfz='nvim ~/.zshrc'
 alias cfv='vim ~/.config/nvim/init.vim'
 alias cfp='vim ~/.profile'
@@ -34,4 +36,6 @@ alias svim='sudo nvim'
 alias sv='sudo vim'
 alias v='nvim'
 
-alias gdots="/usr/bin/git --git-dir=$HOME/.mydots --work-tree=$HOME"
+alias gdots="/usr/bin/git --git-dir=$HOME/.gdots --work-tree=$HOME"
+
+start_consul="docker run --name consul -d -p 8500:8500 -v /home/sebbe/consul/data:/consul/data -v /home/sebbe/consul/config:/consul/config consul agent -server -ui -node=server-1 -bootstrap-expect=1 -client=0.0.0.0"

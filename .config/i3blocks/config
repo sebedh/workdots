@@ -1,0 +1,17 @@
+command=$SCRIPT_DIR/$BLOCK_NAME
+separator_block_width=15
+markup=pango
+
+[memory]
+label=🧠
+interval=30
+color=#D5911A
+command=mem
+
+[battery]
+command=battery
+interval=5
+
+[time]
+command=echo $(date '+%Y %b %d (%a)  %H:%M v.%V')
+interval=30

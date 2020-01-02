@@ -11,6 +11,13 @@ set tabstop=4 shiftwidth=4 expandtab
 set autowrite
 syntax on
 
+" YAML settings
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" HTML settings
+au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
+autocmd FileType gohtmltmpl setlocal ts=2 sw=2 expandtab
+
 call plug#begin('~/.config/nvim/plugged')
 if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -94,12 +101,6 @@ let g:go_highlight_variable_assignments = 1
 let g:go_highlight_format_strings = 1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 
-" YAML settings
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
-" HTML settings
-au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
-autocmd FileType gohtmltmpl setlocal ts=2 sw=2 expandtab
 
 " Go helper functions
 "function! s:build_go_files()

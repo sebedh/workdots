@@ -26,8 +26,14 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+
 export PATH="$PATH:$HOME/.scripts:$HOME/.local/bin:$HOME/go/bin:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/git-repos/dasht/bin"
 export EDITOR="nvim"
-export MANPATH="$HOME/git-repos/dasht/man:$MANPATH"
-export TERMINAL="termite"
+export TERMINAL="kitty"
+export VAGRANT_DEFAULT_PROVBIDER="libvirt"
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_SCREEN_SCALE_FACTORS=1
