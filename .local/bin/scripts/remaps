@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# This will run at startup
+xset r rate 300 50
+setxkbmap -layout us
+xmodmap /home/sebbe/.Xmodmap_us
