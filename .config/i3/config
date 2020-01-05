@@ -21,7 +21,7 @@ exec --no-startup-id remaps
 # Network manager applet
 exec --no-startup-id nm-applet
 exec --no-startup-id sh $HOME/.fehbg
-exec --no-startup-id netcloud
+exec --no-startup-id nextcloud
 #exec --no-startup-id xwallpaper --zoom ~/.config/wall.png
 
 # Set Xresources colors:
@@ -125,7 +125,7 @@ bindsym $mod+a			    exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize
 bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
 
-bindsym $mod+d			exec --no-startup-id dmenu_path | dmenu
+bindsym $mod+d			exec --no-startup-id dmenu_path | dmenu_run
 bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
 set $freeze Distraction-free mode (mod+shift+esc to exit)
@@ -317,10 +317,10 @@ bindsym XF86Search		exec $BROWSER https://duckduckgo.com
 ##bindsym XF86Finance		exec
 ##bindsym XF86Game		exec
 bindsym XF86Shop		exec $BROWSER https://ebay.com
-bindsym XF86MonBrightnessUp 	exec "xbacklight + 7; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown 	exec "xbacklight - 7; notify-send 'brightness down'"
-bindsym shift+XF86MonBrightnessUp 	exec "xbacklight + 2; notify-send 'brightness up'"
-bindsym shift+XF86MonBrightnessDown 	exec "xbacklight - 2; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp 	exec "light -A 5; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown 	exec "light -U 5; notify-send 'brightness down'"
+bindsym shift+XF86MonBrightnessUp exec "light -A 2; notify-send 'brightness up'" 	
+bindsym shift+XF86MonBrightnessDown	exec "light -U 2; notify-send 'brightness down'"
 bindsym XF86AudioMedia		exec --no-startup-id st -e ncmpcpp
 bindsym XF86Display		exec --no-startup-id arandr
 #bindsym XF86KbdLightOnOff	exec

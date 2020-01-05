@@ -1,0 +1,7 @@
+[Script-closewindowaction]
+BorderActivate=
+Enabled=true
+
+[Script-runcommandaction]
+BorderActivate=
+Enabled=true
