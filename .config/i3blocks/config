@@ -9,7 +9,7 @@ color=#D5911A
 command=mem
 
 [battery]
-command=battery
+command=battery2
 interval=5
 
 [time]

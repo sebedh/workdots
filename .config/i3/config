@@ -17,10 +17,12 @@ exec --no-startup-id dunst
 # Composite manager:
 exec --no-startup-id xcompmgr
 # Runs the key remapping scripts
-exec --no-startup-id ~/.scripts/remaps
+exec --no-startup-id remaps
 # Network manager applet
 exec --no-startup-id nm-applet
-exec --no-startup-id xwallpaper --zoom ~/.config/wall.png
+exec --no-startup-id sh $HOME/.fehbg
+exec --no-startup-id netcloud
+#exec --no-startup-id xwallpaper --zoom ~/.config/wall.png
 
 # Set Xresources colors:
 set_from_resource $darkblack	color0  #000000
@@ -60,12 +62,28 @@ for_window [instance="dropdown_*"] move position center
 
 
 bar {
-	font pango:mono 10, FontAwesome 10
+	font pango:mono 10
 	status_command i3blocks
 	position top
 	mode dock
 	modifier None
 }
+
+mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
+
+  bindsym l exec i3-msg exit
+
+  bindsym r exec systemctl reboot
+
+  bindsym s exec systemctl shutdown
+
+  bindsym Escape mode "default"
+
+  bindsym Return mode "default"
+
+}
+
+bindsym $mod+Shift+Escape mode "exit: [l]ogout, [r]eboot, [s]hutdown"
 
 # #---Basic Bindings---# #
 bindsym $mod+space exec $term
@@ -75,10 +93,10 @@ bindsym $mod+Shift+Return floating toggle
 bindsym $mod+Return focus mode_toggle
 
 bindsym $mod+Escape		workspace prev
-bindsym $mod+Shift+Escape 	exec --no-startup-id prompt "Are you sure you want to leave i3?" "i3-msg exit"
+#bindsym $mod+Shift+Escape 	exec --no-startup-id prompt "Are you sure you want to leave i3?" "i3-msg exit"
 
 # bindsym $mod+BackSpace
-bindsym $mod+Shift+BackSpace	exec --no-startup-id prompt "Are you sure you want to reboot?" "$reboot"
+#bindsym $mod+Shift+BackSpace	exec --no-startup-id prompt "Are you sure you want to reboot?" "$reboot"
 
 # #---Letter Key Bindings---# #
 bindsym $mod+q			[con_id="__focused__" instance="^(?!math|dropdown).*$"] kill

@@ -3,6 +3,7 @@
 #alias progs='(pacman -Qet && pacman -Qm | sort -u'
 #alias p='sudo pacman'
 #alias vims='NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim'
+alias d='sudo dnf'
 alias apt='sudo apt'
 alias vim='nvim'
 alias tmn='tmux new -s'
@@ -26,7 +27,7 @@ alias egrep='egrep --color=auto'
 # Opvn aias
 
 # Config aliases
-alias cfi='nvim ~/.config/sway/config'
+alias cfi='nvim ~/.config/i3/config'
 alias cfz='nvim ~/.zshrc'
 alias cfv='vim ~/.config/nvim/init.vim'
 alias cfp='vim ~/.profile'

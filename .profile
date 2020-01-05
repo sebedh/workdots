@@ -31,7 +31,10 @@ if [ -n "$DESKTOP_SESSION" ];then
     export SSH_AUTH_SOCK
 fi
 
-export PATH="$PATH:$HOME/.scripts:$HOME/.local/bin:$HOME/go/bin:$HOME/.cargo/bin"
+# Sets ~/.local/bin to path recursive
+export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+# Sets go and rust paths
+export PATH="$PATH:$HOME/go/bin:$HOME/.cargo/bin"
 export EDITOR="nvim"
 export TERMINAL="kitty"
 export VAGRANT_DEFAULT_PROVBIDER="libvirt"
